@@ -4,13 +4,13 @@ import axios from 'axios';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import ReactResizeDetector from 'react-resize-detector';
 import shortid from 'shortid';
+import ClayIcon from '@clayui/icon';
 
 import GrowFavouritesPortletLeftPanel from './modules/GrowFavouritesPortletLeftPanel.es';
 import GrowFavouritesSlide from './modules/GrowFavouritesSlide.es';
-import GrowIcon from "./modules/GrowIcon.es";
 
 //ThemeDisplay data / API config / APP config -> refactor!
-const SPRITEMAP = Liferay.ThemeDisplay.getPathThemeImages();
+const SPRITEMAP = Liferay.ThemeDisplay.getPathThemeImages() + "/icons.svg";
 const PORTAL_URL = Liferay.ThemeDisplay.getCDNBaseURL();
 const GROUP_ID = Liferay.ThemeDisplay.getCompanyGroupId();
 const USER_ID = Liferay.ThemeDisplay.getUserId();
@@ -243,10 +243,9 @@ class App extends React.Component {
 								>
 									<ButtonBack
 										className={btnBackClasses}>
-										<GrowIcon
+										<ClayIcon
 											spritemap={SPRITEMAP}
-											classes="lexicon-icon inline-item"
-											iconName="angle-left"
+											symbol="angle-left"
 										/>
 									</ButtonBack>
 									<Slider className={"grow-favourites-slider"}>
@@ -254,10 +253,9 @@ class App extends React.Component {
 									</Slider>		
 									<ButtonNext
 										className={btnNextClasses}>
-										<GrowIcon
+										<ClayIcon
 											spritemap={SPRITEMAP}
-											classes="lexicon-icon inline-item"
-											iconName="angle-right"
+											symbol="angle-right"
 										/>
 									</ButtonNext>
 								</CarouselProvider>
@@ -266,24 +264,21 @@ class App extends React.Component {
 								<div className="empty-state-holder">
 									<div className="alert alert-info" role="alert">
 										<span className="alert-indicator">
-											<GrowIcon
+											<ClayIcon
 												spritemap={SPRITEMAP}
-												classes="lexicon-icon inline-item"
-												iconName="info-circle"
+												symbol="info-circle"
 											/>
 										</span>
 										<strong className="lead">Info:</strong>
 										<span className="info-lead">To save an article as a favourite, click on the</span>
-										<GrowIcon
+										<ClayIcon
 											spritemap={SPRITEMAP}
-											classes="lexicon-icon inline-item"
-											iconName="star-o"
+											symbol="star-o"
 										/>
 										<span className="info-lead">icon. When an article is saved in your favourites, the icon will be displayed as -></span>
-										<GrowIcon
+										<ClayIcon
 											spritemap={SPRITEMAP}
-											classes="lexicon-icon inline-item"
-											iconName="star"
+											symbol="star"
 										/>
 									</div>
 								</div>

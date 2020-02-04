@@ -1,6 +1,6 @@
 import React from 'react';
 
-import GrowFavouritesCard from './GrowFavouritesCard.es';
+import { GrowCardHorizontal } from "grow-clay";
 
 class GrowFavouritesSlide extends React.Component {
   
@@ -22,20 +22,32 @@ class GrowFavouritesSlide extends React.Component {
 			{data.map((cardData, key) => 
 				<div className="row" key={"row-"+this.props.slideIndex+"-"+key}>
 					<div className="col-sm" key={"col-"+this.props.slideIndex+"-"+key}>
-						<GrowFavouritesCard
+						<GrowCardHorizontal
 							key={"growfavouritescard-"+this.props.slideIndex+"-"+key}
 							spritemap={this.props.spritemap}
 							portalUrl={this.props.portalUrl}
 							handleStarClick={this.props.handleStarClick}
-							cardData={cardData}
 							articleAuthor={cardData.articleAuthor}
-							articleAuthorAvatar={cardData.authorAvatar}
-							articleCreateDate={cardData.createDate}
+							articleAuthorAvatar={cardData.authorAvatar || cardData.articleAuthorAvatar}
+							articleCreateDate={cardData.createDate || cardData.articleCreateDate}
 							articleTitle={cardData.articleTitle}
 							articleCategory={cardData.articleCategory}
 							userInitials={cardData.userInitials}
 							star={cardData.star}
 							id={cardData.id}
+							interactive={true}
+							href={cardData.articleTitle ?
+								this.props.portalUrl +
+								"/" +
+								cardData.articleCategory || "Share" +
+								"/" +
+								cardData.articleTitle
+									.split(" ")
+									.join("+")
+									.replace(/'/g, '_APOSTROPHE_')
+									.toLowerCase()
+								: undefined
+							}
 						/>
 					</div>
 				</div>

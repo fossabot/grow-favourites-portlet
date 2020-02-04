@@ -1,5 +1,4 @@
 import React from 'react';
-import GrowIcon from "./GrowIcon.es";
 
 class GrowFavouritesPortletLeftPanel extends React.Component {
 	
