@@ -39,7 +39,7 @@ class GrowFavouritesSlide extends React.Component {
 							href={cardData.articleTitle ?
 								this.props.portalUrl +
 								"/" +
-								cardData.articleCategory || "Share" +
+								(cardData.articleCategory || "Share") +
 								"/" +
 								cardData.articleTitle
 									.split(" ")
