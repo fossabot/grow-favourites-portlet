@@ -1,7 +1,7 @@
 {
 	"dependencies": {
 		"@clayui/icon": "^3.0.2",
-		"grow-clay": "^0.1.5",
+		"grow-clay": "^0.2.0",
 		"axios": "^0.19.0",
 		"prop-types": "15.7.2",
 		"pure-react-carousel": "^1.20.0",
